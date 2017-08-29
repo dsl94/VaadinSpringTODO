@@ -35,4 +35,9 @@ public class TodoLayout extends VerticalLayout
 		todoRepository.save(todo);
 		setTodos(todoRepository.findAll());
 	}
+
+    public void deleteCompleted() {
+		todoRepository.deleteByDone(true);
+		setTodos(todoRepository.findAll());
+    }
 }
